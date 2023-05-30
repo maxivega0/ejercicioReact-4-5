@@ -4,6 +4,7 @@ import { useState } from "react";
 
 const FormularioTarea = () => {
   const [tarea, setTarea] = useState("");
+  // Array de tareas
   const [tareas, setTareas] = useState([]);
 
   const handleSubmit = (e) => {
@@ -28,7 +29,9 @@ const FormularioTarea = () => {
           </Button>
         </Form.Group>
       </Form>
-      <ListaTareas></ListaTareas>
+      {/* Usamos el mismo nombre del prop con el objeto a enviar */}
+      {/* Lo de la izquierda es el prop, y lo de la derecha es el state */}
+      <ListaTareas tareas={tareas}></ListaTareas>
     </>
   );
 };
