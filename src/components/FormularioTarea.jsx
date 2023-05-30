@@ -11,17 +11,17 @@ const FormularioTarea = () => {
     e.preventDefault();
     setTareas([...tareas, tarea]);
     //* Limpiar el imput
-    setTarea('');
+    setTarea("");
   };
   const borrarTarea = (nombreTarea) => {
-// Filter es un metodo inmutable que modifica una copia del array
-// Filter lleva una funcion 
-  let copiaTareas = tareas.filter((itemTarea) => itemTarea !== nombreTarea );
-
+    // Filter es un metodo inmutable que modifica una copia del array
+    // Filter lleva una funcion
+    let copiaListaTareas = tareas.filter(
+      (itemTarea) => itemTarea !== nombreTarea
+    );
     // Ahora debo actualizar el state
-    setTareas(copiaTareas); 
-  }
-
+    setTareas(copiaListaTareas);
+  };
 
   return (
     <>
