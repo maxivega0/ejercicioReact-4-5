@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { ListGroup } from "react-bootstrap";
 import ItemTarea from "./ItemTarea";
 

@@ -1,7 +1,11 @@
-import { ListGroup } from "react-bootstrap";
+/* eslint-disable react/prop-types */
+import { Button, ListGroup } from "react-bootstrap";
 
 const ItemTarea = ({tarea}) => {
-  return <ListGroup.Item>{tarea}</ListGroup.Item>;
+  return <ListGroup.Item className="d-flex justify-content-between">
+    {tarea}
+    <Button variant="danger">Borrar</Button>
+    </ListGroup.Item>;
 };
 
 export default ItemTarea;
