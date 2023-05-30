@@ -13,6 +13,15 @@ const FormularioTarea = () => {
     //* Limpiar el imput
     setTarea('');
   };
+  const borrarTarea = (nombreTarea) => {
+// Filter es un metodo inmutable que modifica una copia del array
+// Filter lleva una funcion 
+  let copiaTareas = tareas.filter((itemTarea) => itemTarea !== nombreTarea );
+
+    // Ahora debo actualizar el state
+    setTareas(copiaTareas); 
+  }
+
 
   return (
     <>
@@ -31,7 +40,8 @@ const FormularioTarea = () => {
       </Form>
       {/* Usamos el mismo nombre del prop con el objeto a enviar */}
       {/* Lo de la izquierda es el prop, y lo de la derecha es el state */}
-      <ListaTareas tareas={tareas}></ListaTareas>
+      <ListaTareas tareas={tareas} borrarTarea={borrarTarea}></ListaTareas>
+      {/* Envio el prop de fucion */}
     </>
   );
 };
