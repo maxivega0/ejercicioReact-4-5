@@ -4,17 +4,16 @@ import { useState, useEffect } from "react";
 
 const FormularioTarea = () => {
   //* Zona de variables
-  const tareasDelLocalStorage = JSON.parse(
-    localStorage.getItem("listaTareas") || []
-  );
+  const tareasDelLocalStorage = JSON.parse(localStorage.getItem("listaTareas") || [])
   const [tarea, setTarea] = useState("");
   const [tareas, setTareas] = useState(tareasDelLocalStorage);
 
+
   //*Zona ciclo de vida
-  useEffect(() => {
-    localStorage.setItem("listaTareas", JSON.stringify(tareas));
-    console.log("Aqui deberia guardar en local storage");
-  }, [tareas]);
+  useEffect(()=>{
+    localStorage.setItem("listaTareas", JSON.stringify(tareas))
+  },[tareas])
+
 
   //* Zona de Funciones
 
