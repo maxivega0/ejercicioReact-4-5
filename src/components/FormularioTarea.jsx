@@ -4,14 +4,14 @@ import { useState, useEffect } from "react";
 
 const FormularioTarea = () => {
   //* Zona de variables
-  const tareasDelLocalStorage = JSON.parse(localStorage.getItem("listaTareas") || [])
+  const arrayTareasLS = JSON.parse(localStorage.getItem("listaTareas") || []);
   const [tarea, setTarea] = useState("");
-  const [tareas, setTareas] = useState(tareasDelLocalStorage);
+  const [tareas, setTareas] = useState(arrayTareasLS);
 
 
   //*Zona ciclo de vida
   useEffect(()=>{
-    localStorage.setItem("listaTareas", JSON.stringify(tareas))
+    localStorage.setItem("listaTareas", JSON.stringify(tareas));
   },[tareas])
 
 
